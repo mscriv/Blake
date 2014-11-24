@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @graduation_requirement.year %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @graduation_requirement.description %>
+</p>
+
+<%= link_to 'Edit', edit_graduation_requirement_path(@graduation_requirement) %> |
+<%= link_to 'Back', graduation_requirements_path %>

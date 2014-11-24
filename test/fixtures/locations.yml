@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school: MyString
+  test_code: MyString
+  high_school_code: MyString
+  test_date_id: 
+
+two:
+  school: MyString
+  test_code: MyString
+  high_school_code: MyString
+  test_date_id: 

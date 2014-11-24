@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @requirement_category.name %>
+</p>
+
+<p>
+  <strong>Graduation requirement:</strong>
+  <%= @requirement_category.graduation_requirement %>
+</p>
+
+<%= link_to 'Edit', edit_requirement_category_path(@requirement_category) %> |
+<%= link_to 'Back', requirement_categories_path %>

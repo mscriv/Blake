@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @testing_comparison.name %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @testing_comparison.cost %>
+</p>
+
+<p>
+  <strong>General information:</strong>
+  <%= @testing_comparison.general_information %>
+</p>
+
+<p>
+  <strong>Test content:</strong>
+  <%= @testing_comparison.test_content %>
+</p>
+
+<p>
+  <strong>Scoring:</strong>
+  <%= @testing_comparison.scoring %>
+</p>
+
+<%= link_to 'Edit', edit_testing_comparison_path(@testing_comparison) %> |
+<%= link_to 'Back', testing_comparisons_path %>

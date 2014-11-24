@@ -1,0 +1,2 @@
+module SeniorChecklistsHelper
+end

@@ -1,0 +1,37 @@
+<%= form_for(@testing_comparison) do |f| %>
+  <% if @testing_comparison.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@testing_comparison.errors.count, "error") %> prohibited this testing_comparison from being saved:</h2>
+
+      <ul>
+      <% @testing_comparison.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :general_information %><br>
+    <%= f.text_area :general_information %>
+  </div>
+  <div class="field">
+    <%= f.label :test_content %><br>
+    <%= f.text_area :test_content %>
+  </div>
+  <div class="field">
+    <%= f.label :scoring %><br>
+    <%= f.text_area :scoring %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

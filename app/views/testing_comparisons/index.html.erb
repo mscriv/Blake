@@ -1,0 +1,33 @@
+<h1>Listing testing_comparisons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cost</th>
+      <th>General information</th>
+      <th>Test content</th>
+      <th>Scoring</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testing_comparisons.each do |testing_comparison| %>
+      <tr>
+        <td><%= testing_comparison.name %></td>
+        <td><%= testing_comparison.cost %></td>
+        <td><%= testing_comparison.general_information %></td>
+        <td><%= testing_comparison.test_content %></td>
+        <td><%= testing_comparison.scoring %></td>
+        <td><%= link_to 'Show', testing_comparison %></td>
+        <td><%= link_to 'Edit', edit_testing_comparison_path(testing_comparison) %></td>
+        <td><%= link_to 'Destroy', testing_comparison, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testing comparison', new_testing_comparison_path %>
