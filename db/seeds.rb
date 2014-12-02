@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+require 'faker'
+
+5.times do |b|
+  counselor = Counselor.create!(name: Faker::Name.name, bio: Faker::Company.name, contact: Faker::Address.zip_code)
+
+end
