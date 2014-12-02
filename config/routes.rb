@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :counselors
 
-  resources :schools
+  resources :schools do
+
+  resources :counselors
+  end
 
   resources :testing_comparisons
 

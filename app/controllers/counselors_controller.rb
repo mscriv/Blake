@@ -4,7 +4,7 @@ class CounselorsController < ApplicationController
   # GET /counselors
   # GET /counselors.json
   def index
-    @counselors = Counselor.all
+    @room = School.find(params[:school_id])
   end
 
   # GET /counselors/1
@@ -14,7 +14,8 @@ class CounselorsController < ApplicationController
 
   # GET /counselors/new
   def new
-    @counselor = Counselor.new
+    @school = School.find(params[:school_id])
+    @counselor = @school.counselors.new
   end
 
   # GET /counselors/1/edit
@@ -24,7 +25,8 @@ class CounselorsController < ApplicationController
   # POST /counselors
   # POST /counselors.json
   def create
-    @counselor = Counselor.new(counselor_params)
+    @school = School.find(params[:school_id])
+    @counselor = @school.counselors.new(counselor_params)
 
     respond_to do |format|
       if @counselor.save
