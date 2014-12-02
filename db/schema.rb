@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202175237) do
+ActiveRecord::Schema.define(version: 20141202201352) do
+
+  create_table "counselors", force: true do |t|
+    t.string   "name"
+    t.text     "bio"
+    t.string   "contact"
+    t.integer  "school_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "role",       limit: 25, default: "staff"
+  end
+
+  add_index "counselors", ["school_id"], name: "index_counselors_on_school_id"
 
   create_table "events", force: true do |t|
     t.string   "title"
