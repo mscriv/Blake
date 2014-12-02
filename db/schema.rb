@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124184759) do
+ActiveRecord::Schema.define(version: 20141202175237) do
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20141124184759) do
   end
 
   add_index "requirement_categories", ["graduation_requirement_id"], name: "index_requirement_categories_on_graduation_requirement_id"
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "subdomain"
+  end
 
   create_table "senior_checklists", force: true do |t|
     t.string   "month"

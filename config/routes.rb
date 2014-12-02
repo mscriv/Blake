@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :schools
+
   resources :testing_comparisons
 
   resources :locations
@@ -18,6 +20,9 @@ Rails.application.routes.draw do
   resources :requirement_categories
 
   resources :graduation_requirements
+
+  match '/', to: 'schools#show', constraints: { subdomain: /.+/ }, via: [:get, :post, :put, :patch, :delete]
+  root 'schools#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
