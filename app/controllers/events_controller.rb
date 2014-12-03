@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :load_school
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = @school.events.all
     @events_by_date = @events.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 

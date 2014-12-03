@@ -1,5 +1,5 @@
 
-<h1><%= @school %></h1>
+<h1><%= @school.name %></h1>
 
 <h2>Listing counselors</h2>
 
@@ -20,7 +20,7 @@
         <td><%= counselor.name %></td>
         <td><%= counselor.bio %></td>
         <td><%= counselor.contact %></td>
-        <td><%= counselor.school %></td>
+        <td><%= counselor.school.name %></td>
         <td><%= link_to 'Show', counselor %></td>
       </tr>
     <% end %>
@@ -29,4 +29,3 @@
 
 <br>
 
-<%= link_to 'New Counselor', new_school_counselor_path %>

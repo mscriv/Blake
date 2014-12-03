@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202201352) do
+ActiveRecord::Schema.define(version: 20141203160010) do
 
   create_table "counselors", force: true do |t|
     t.string   "name"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(version: 20141202201352) do
     t.time     "ends_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "school_id"
   end
+
+  add_index "events", ["school_id"], name: "index_events_on_school_id"
 
   create_table "graduation_requirements", force: true do |t|
     t.string   "year"

@@ -6,7 +6,8 @@ class CounselorsController < ApplicationController
   # GET /counselors
   # GET /counselors.json
   def index
-    @counselor = School.find(params[:school_subdomain])
+
+    @counselor = @school.counselors.all
   end
 
   # GET /counselors/1
