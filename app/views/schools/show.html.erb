@@ -15,5 +15,13 @@
   <%= @school.contact %>
 </p>
 
+<div id="counselors">
+      <h2>Counselors</h2>
+  <% @school.counselors.each do |counselor| %>
+      <h4><%= link_to counselor.name, counselor %>
+      <%= simple_format(counselor.bio) %></h4>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>

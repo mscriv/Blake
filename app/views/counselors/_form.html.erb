@@ -1,4 +1,4 @@
-<%= form_for(@counselor) do |f| %>
+<%= form_for([@school, @counselor], html: {multipart: true})  do |f| %>
   <% if @counselor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@counselor.errors.count, "error") %> prohibited this counselor from being saved:</h2>

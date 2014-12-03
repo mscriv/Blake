@@ -1,20 +1,24 @@
 class CounselorsController < ApplicationController
   before_action :set_counselor, only: [:show, :edit, :update, :destroy]
+  before_filter :load_school
+
 
   # GET /counselors
   # GET /counselors.json
   def index
-    @room = School.find(params[:school_id])
+    @counselor = School.find(params[:school_subdomain])
   end
 
   # GET /counselors/1
   # GET /counselors/1.json
   def show
+    @counselor = @school.counselors.find(params[:id])
+
   end
 
   # GET /counselors/new
   def new
-    @school = School.find(params[:school_id])
+    @school = School.find(params[:school_subdomain])
     @counselor = @school.counselors.new
   end
 
@@ -25,7 +29,7 @@ class CounselorsController < ApplicationController
   # POST /counselors
   # POST /counselors.json
   def create
-    @school = School.find(params[:school_id])
+    @school = School.find(params[:school_subdomain])
     @counselor = @school.counselors.new(counselor_params)
 
     respond_to do |format|
@@ -71,6 +75,6 @@ class CounselorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def counselor_params
-      params.require(:counselor).permit(:name, :bio, :contact, :school_id)
+      params.require(:counselor).permit(:name, :bio, :contact, :school_id, :school_subdomain)
     end
 end

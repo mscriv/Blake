@@ -1,4 +1,7 @@
-<h1>Listing counselors</h1>
+
+<h1><%= @school %></h1>
+
+<h2>Listing counselors</h2>
 
 <table>
   <thead>
@@ -12,15 +15,13 @@
   </thead>
 
   <tbody>
-    <% @counselors.each do |counselor| %>
+    <% @school.counselors.each do |counselor| %>
       <tr>
         <td><%= counselor.name %></td>
         <td><%= counselor.bio %></td>
         <td><%= counselor.contact %></td>
         <td><%= counselor.school %></td>
         <td><%= link_to 'Show', counselor %></td>
-        <td><%= link_to 'Edit', edit_counselor_path(counselor) %></td>
-        <td><%= link_to 'Destroy', counselor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Counselor', new_counselor_path %>
+<%= link_to 'New Counselor', new_school_counselor_path %>
